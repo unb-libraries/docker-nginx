@@ -8,21 +8,19 @@ ENV LC_ALL     en_US.UTF-8
 ENV WEBTREE_ROOT /usr/share/nginx
 ENV WEBTREE_WEBROOT /usr/share/nginx/html
 
-CMD ["/sbin/my_init"]
 
 RUN apt-get update && \
-  DEBIAN_FRONTEND="noninteractive" apt-get install --yes nginx
-RUN service nginx stop
+  DEBIAN_FRONTEND="noninteractive" apt-get install --yes nginx && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+  service nginx stop
 
 ADD conf/nginx/default.conf /etc/nginx/sites-available/default
 
+CMD ["/sbin/my_init"]
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
 RUN chmod -v +x /etc/service/*/run
 RUN chmod -v +x /etc/my_init.d/*.sh
-
-# Clean-up
-RUN apt-get clean && \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 80
