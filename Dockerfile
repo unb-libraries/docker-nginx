@@ -18,7 +18,7 @@ ADD conf/nginx/default.conf /etc/nginx/sites-available/default
 CMD ["/sbin/my_init"]
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
-RUN chmod -v +x /etc/service/*/run
-RUN chmod -v +x /etc/my_init.d/*.sh
+RUN chmod -v +x /etc/service/*/run && \
+  chmod -v +x /etc/my_init.d/*.sh
 
 EXPOSE 80
