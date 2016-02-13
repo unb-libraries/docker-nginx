@@ -1,14 +1,12 @@
 FROM phusion/baseimage
 MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
 
-RUN locale-gen en_US.UTF-8
 ENV LANG       en_US.UTF-8
 ENV LC_ALL     en_US.UTF-8
-
 ENV WEBTREE_ROOT /usr/share/nginx
 ENV WEBTREE_WEBROOT /usr/share/nginx/html
 
-
+RUN locale-gen en_US.UTF-8
 RUN apt-get update && \
   DEBIAN_FRONTEND="noninteractive" apt-get install --yes nginx && \
   apt-get clean && \
