@@ -1,4 +1,4 @@
-# unblibraries/nginx
+# unblibraries/nginx [![](https://badge.imagelayers.io/unblibraries/nginx:latest.svg)](https://imagelayers.io/?images=unblibraries/nginx:latest 'Get your own badge on imagelayers.io')
 Docker container : leverages phusion/baseimage to deploy a baseline Nginx container.
 
 ## Usage
