@@ -15,6 +15,7 @@ RUN apk --update add nginx && \
   mkdir -p ${APP_LOG_DIR}
 
 ADD conf/nginx/nginx.conf /etc/nginx/nginx.conf
+ADD conf/nginx/app.conf /etc/nginx/conf.d/app.conf
 
 ADD scripts /scripts
 RUN chmod -R 755 /scripts
