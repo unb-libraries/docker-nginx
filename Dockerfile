@@ -1,24 +1,25 @@
-FROM phusion/baseimage
+FROM gliderlabs/alpine
 MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
 
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
-ENV WEBTREE_ROOT /usr/share/nginx
-ENV WEBTREE_WEBROOT /usr/share/nginx/html
+ENV APP_HOSTNAME nginx.local
+ENV APP_ROOT /app
+ENV NGINX_RUN_GROUP nginx
+ENV NGINX_RUN_USER nginx
 
-RUN locale-gen en_US.UTF-8
-RUN apt-get update && \
-  DEBIAN_FRONTEND="noninteractive" apt-get install --yes nginx && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-  service nginx stop
+ENV APP_LOG_DIR $APP_ROOT/log
+ENV APP_WEBROOT $APP_ROOT/html
 
-ADD conf/nginx/default.conf /etc/nginx/sites-available/default
+RUN apk --update add nginx && \
+  rm -f /var/cache/apk/* && \
+  mkdir -p ${APP_WEBROOT} && \
+  mkdir -p ${APP_LOG_DIR}
 
-CMD ["/sbin/my_init"]
-ADD init/ /etc/my_init.d/
-ADD services/ /etc/service/
-RUN chmod -v +x /etc/service/*/run && \
-  chmod -v +x /etc/my_init.d/*.sh
+ADD conf/nginx/nginx.conf /etc/nginx/nginx.conf
 
+ADD scripts /scripts
+RUN chmod -R 755 /scripts
+
+WORKDIR /app
 EXPOSE 80
+
+CMD ["/scripts/run.sh"]

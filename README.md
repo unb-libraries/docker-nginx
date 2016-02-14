@@ -1,14 +1,14 @@
-# unblibraries/nginx [![](https://badge.imagelayers.io/unblibraries/nginx:latest.svg)](https://imagelayers.io/?images=unblibraries/nginx:latest 'Get your own badge on imagelayers.io')
-Docker container : leverages phusion/baseimage to deploy a baseline Nginx container.
+# unblibraries/nginx:alpine [![](https://badge.imagelayers.io/unblibraries/nginx:alpine.svg)](https://imagelayers.io/?images=unblibraries/nginx:alpine 'Get your own badge on imagelayers.io')
+A minimal, baseline nginx container.
 
 ## Usage
 ```
 docker run \
        --rm \
        --name nginx \
-       -v /local/dir:/usr/share/nginx \
+       -v /local/dir:/app/html \
        -p 80:80 \
-       unblibraries/nginx
+       unblibraries/nginx:alpine
 ```
 
 ## License
