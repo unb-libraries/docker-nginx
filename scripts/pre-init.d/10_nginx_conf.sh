@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 if [ "$DEPLOY_ENV" = "dev" ]; then
   sed -i "s|NGINX_LOG_FILE|/proc/self/fd/2|g" /etc/nginx/conf.d/app.conf
   sed -i "s|NGINX_ERROR_LOG_FILE|/proc/self/fd/2|g" /etc/nginx/conf.d/app.conf
