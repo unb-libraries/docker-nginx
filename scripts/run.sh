@@ -7,4 +7,5 @@ do
   fi
 done
 
+rm -rf /scripts/pre-init.d/*
 nginx
