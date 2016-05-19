@@ -15,6 +15,8 @@ ENV NGINX_ERROR_LOG_FILE ${APP_LOG_DIR}/${APP_HOSTNAME}.error.log
 
 RUN apk --update add nginx && \
   rm -f /var/cache/apk/* && \
+  mkdir -p /run/nginx/ && \
+  chown ${NGINX_RUN_USER}:${NGINX_RUN_GROUP} /run/nginx/ && \
   mkdir -p ${APP_WEBROOT} && \
   mkdir -p ${APP_LOG_DIR}
 
