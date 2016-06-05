@@ -5,20 +5,21 @@ services:
 env:
   global:
     - APP_WEBROOT=/app/html
-    - DOCKER_IMAGE_PARENT=alpine:3.4
-    - DOCKER_IMAGE_TAG=unblibraries/nginx:alpine
-    - DOCKER_VERSION=1.10.1-0~trusty
     - DOCKER_COMPOSE_VERSION=1.7.1
+    - DOCKER_CORE_VERSION=1.10.1-0~trusty
+    - DOCKER_IMAGE_NAME=unblibraries/nginx
+    - DOCKER_IMAGE_PARENT=alpine:3.4
+    - DOCKER_IMAGE_TAG=alpine
 
 before_install:
-  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
+  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_CORE_VERSION}
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
 before_script:
   - docker pull "$DOCKER_IMAGE_PARENT"
-  - 'sed -i "s|image: $DOCKER_IMAGE_TAG|build: .|g" docker-compose.yml'
+  - 'sed -i "s|image: $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG|build: .|g" docker-compose.yml'
   - 'echo "    volumes:" >> docker-compose.yml'
   - 'echo "      - ./travis/htdocs:$APP_WEBROOT" >> docker-compose.yml'
 
