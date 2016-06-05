@@ -1,5 +1,13 @@
-# unblibraries/nginx:alpine [![](https://badge.imagelayers.io/unblibraries/nginx:alpine.svg)](https://imagelayers.io/?images=unblibraries/nginx:alpine 'Get your own badge on imagelayers.io')
+# unblibraries/nginx:alpine [![](https://badge.imagelayers.io/unblibraries/nginx:alpine.svg)](https://imagelayers.io/?images=unblibraries/nginx:alpine 'Get your own badge on imagelayers.io') [![Build Status](https://travis-ci.org/unb-libraries/docker-nginx.svg?branch=alpine)](https://travis-ci.org/unb-libraries/docker-nginx)
 A minimal, baseline nginx container.
+
+## Repository Tags
+Two configurations are available, depending on your needs:
+
+|               Tag              | Size                                                                                                                                                                                 | Status                                                                                                                                               |
+|:------------------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    unblibraries/nginx:alpine   | [![](https://badge.imagelayers.io/unblibraries/nginx:alpine.svg)](https://imagelayers.io/?images=unblibraries/nginx:alpine 'Get your own badge on imagelayers.io')           | [![Build Status](https://travis-ci.org/unb-libraries/docker-nginx.svg?branch=alpine)](https://travis-ci.org/unb-libraries/docker-nginx)      |
+| unblibraries/nginx:alpine-edge | [![](https://badge.imagelayers.io/unblibraries/nginx:alpine-edge.svg)](https://imagelayers.io/?images=unblibraries/nginx:alpine-edge 'Get your own badge on imagelayers.io') | [![Build Status](https://travis-ci.org/unb-libraries/docker-nginx.svg?branch=alpine-edge)](https://travis-ci.org/unb-libraries/docker-nginx) |
 
 ## Usage
 ```
