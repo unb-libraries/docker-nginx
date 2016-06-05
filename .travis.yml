@@ -29,8 +29,7 @@ script:
   - travis/waitForNginxDeploy.sh
 
 after_success:
-  # Build image on dockerhub.
-  - curl -H "Content-Type: application/json" --data "{'docker_tag': '${DOCKER_IMAGE_TAG}'}" -X POST "https://registry.hub.docker.com/u/${DOCKER_IMAGE_NAME}/trigger/${DOCKER_HUB_TRIGGER_TOKEN}/"
+  - travis/triggerDockerHubBuild.sh
 
 notifications:
   slack:
