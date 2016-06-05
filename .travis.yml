@@ -10,6 +10,7 @@ env:
     - DOCKER_IMAGE_NAME=unblibraries/nginx
     - DOCKER_IMAGE_PARENT=alpine:3.4
     - DOCKER_IMAGE_TAG=alpine
+    - ENDPOINT_NAME=Nginx
 
 before_install:
   - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine="${DOCKER_CORE_VERSION}"
@@ -26,7 +27,7 @@ before_script:
 script:
   - docker-compose build
   - docker-compose up -d
-  - travis/waitForNginxDeploy.sh
+  - travis/waitForDeploy.sh
 
 after_success:
   - travis/triggerDockerHubBuild.sh
