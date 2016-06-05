@@ -12,7 +12,7 @@ env:
     - DOCKER_IMAGE_TAG=alpine
 
 before_install:
-  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_CORE_VERSION}
+  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine="${DOCKER_CORE_VERSION}"
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
@@ -29,7 +29,8 @@ script:
   - travis/waitForNginxDeploy.sh
 
 after_success:
-  - travis/triggerDockerHubBuild.sh
+  # Build image on dockerhub.
+  - curl -H "Content-Type: application/json" --data "{'docker_tag': '${DOCKER_IMAGE_TAG}'}" -X POST "https://registry.hub.docker.com/u/${DOCKER_IMAGE_NAME}/trigger/${DOCKER_HUB_TRIGGER_TOKEN}/"
 
 notifications:
   slack:
