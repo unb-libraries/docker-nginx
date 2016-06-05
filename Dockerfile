@@ -12,8 +12,8 @@ ENV DEPLOY_ENV prod
 ENV APP_LOG_DIR $APP_ROOT/log
 ENV APP_WEBROOT $APP_ROOT/html
 
-ENV NGINX_LOG_FILE ${APP_LOG_DIR}/${APP_HOSTNAME}.access.log
-ENV NGINX_ERROR_LOG_FILE ${APP_LOG_DIR}/${APP_HOSTNAME}.error.log
+ENV NGINX_LOG_FILE /proc/self/fd/2
+ENV NGINX_ERROR_LOG_FILE /proc/self/fd/2
 
 RUN apk --update add nginx && \
   rm -f /var/cache/apk/* && \
