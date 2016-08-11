@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:latest
 MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
 
 ENV APP_HOSTNAME nginx.local
