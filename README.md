@@ -1,4 +1,4 @@
-# unblibraries/nginx:alpine [![](https://badge.imagelayers.io/unblibraries/nginx:alpine.svg)](https://imagelayers.io/?images=unblibraries/nginx:alpine 'Get your own badge on imagelayers.io') [![Build Status](https://travis-ci.org/unb-libraries/docker-nginx.svg?branch=alpine)](https://travis-ci.org/unb-libraries/docker-nginx)
+# unblibraries/nginx:alpine [![](https://images.microbadger.com/badges/image/unblibraries/nginx:alpine.svg)](http://microbadger.com/images/unblibraries/nginx:alpine "Get your own image badge on microbadger.com") [![Build Status](https://travis-ci.org/unb-libraries/docker-nginx.svg?branch=alpine)](https://travis-ci.org/unb-libraries/docker-nginx)
 A minimal, baseline nginx container.
 
 ## Repository Tags
