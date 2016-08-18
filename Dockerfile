@@ -20,7 +20,8 @@ RUN apk --update add nginx && \
   mkdir -p ${NGINX_PID_DIR} && \
   chown ${NGINX_RUN_GROUP}:${NGINX_RUN_USER} ${NGINX_PID_DIR} && \
   mkdir -p ${APP_WEBROOT} && \
-  mkdir -p ${APP_LOG_DIR}
+  mkdir -p ${APP_LOG_DIR} && \
+  rm /etc/nginx/conf.d/default.conf
 
 COPY conf/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY conf/nginx/app.conf /etc/nginx/conf.d/app.conf
