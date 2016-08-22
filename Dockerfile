@@ -1,6 +1,11 @@
 FROM alpine:latest
 MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
 
+LABEL ca.unb.lib.daemon="nginx"
+LABEL vcs-ref="alpine"
+LABEL vcs-url="https://github.com/unb-libraries/docker-nginx"
+LABEL vendor="University of New Brunswick Libraries"
+
 ENV APP_HOSTNAME nginx.local
 ENV APP_ROOT /app
 ENV NGINX_RUN_GROUP nginx
