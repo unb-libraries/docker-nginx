@@ -1,6 +1,11 @@
 FROM alpine:edge
 MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
 
+LABEL ca.unb.lib.daemon="nginx"
+LABEL vcs-ref="alpine-edge"
+LABEL vcs-url="https://github.com/unb-libraries/docker-nginx"
+LABEL vendor="University of New Brunswick Libraries"
+
 ENV APP_HOSTNAME nginx.local
 ENV APP_ROOT /app
 ENV NGINX_PID_DIR /run/nginx
