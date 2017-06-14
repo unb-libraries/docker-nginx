@@ -32,7 +32,6 @@ COPY conf/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY conf/nginx/app.conf /etc/nginx/conf.d/app.conf
 
 COPY scripts /scripts
-RUN chmod -R 755 /scripts
 
 WORKDIR /app
 EXPOSE 80
