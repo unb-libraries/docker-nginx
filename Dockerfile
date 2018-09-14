@@ -8,7 +8,7 @@ LABEL vendor="University of New Brunswick Libraries"
 
 ENV APP_HOSTNAME nginx.local
 ENV APP_ROOT /app
-ENV COLUMNS 80
+ENV COLUMNS 160
 ENV NGINX_PID_DIR /run/nginx
 ENV NGINX_PID_FILE $NGINX_PID_DIR/nginx.pid
 ENV NGINX_RUN_GROUP nginx
