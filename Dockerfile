@@ -24,8 +24,7 @@ ENV NGINX_ERROR_LOG_FILE /proc/self/fd/2
 COPY ./conf /conf
 COPY ./scripts /scripts
 
-RUN apk --update add nginx && \
-  rm -f /var/cache/apk/* && \
+RUN apk --no-cache add nginx && \
   mkdir -p ${NGINX_PID_DIR} && \
   chown ${NGINX_RUN_GROUP}:${NGINX_RUN_USER} ${NGINX_PID_DIR} && \
   mkdir -p ${APP_WEBROOT} && \
