@@ -1,10 +1,10 @@
 FROM alpine:latest
 MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
 
-LABEL ca.unb.lib.daemon="nginx"
-LABEL vcs-ref="alpine"
-LABEL vcs-url="https://github.com/unb-libraries/docker-nginx"
-LABEL vendor="University of New Brunswick Libraries"
+LABEL org.label-schema.schema-version="1.0" \
+      org.label-schema.vcs-ref="alpine" \
+      org.label-schema.vcs-url="https://github.com/unb-libraries/docker-nginx" \
+      org.label-schema.vendor="University of New Brunswick Libraries"
 
 ENV APP_HOSTNAME nginx.local
 ENV APP_ROOT /app
