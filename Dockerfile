@@ -1,8 +1,8 @@
 FROM alpine:latest
 MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
 
-LABEL com.microscaling.docker.dockerfile	/Dockerfile \
-      com.microscaling.license	MIT \
+LABEL com.microscaling.docker.dockerfile /Dockerfile \
+      com.microscaling.license MIT \
       org.label-schema.schema-version="1.0" \
       org.label-schema.vcs-ref="alpine" \
       org.label-schema.vcs-url="https://github.com/unb-libraries/docker-nginx" \
