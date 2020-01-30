@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.11
 MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
 
 LABEL com.microscaling.docker.dockerfile=/Dockerfile \
