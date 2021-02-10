@@ -1,12 +1,19 @@
-FROM alpine:3.11
+FROM alpine:3.13
 MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
 
-LABEL com.microscaling.docker.dockerfile=/Dockerfile \
-      com.microscaling.license=MIT \
-      org.label-schema.schema-version="1.0" \
-      org.label-schema.vcs-ref="alpine" \
-      org.label-schema.vcs-url="https://github.com/unb-libraries/docker-nginx" \
-      org.label-schema.vendor="University of New Brunswick Libraries"
+LABEL ca.unb.lib.generator="nginx" \
+  com.microscaling.docker.dockerfile="/Dockerfile" \
+  com.microscaling.license="MIT" \
+  org.label-schema.build-date=$BUILD_DATE \
+  org.label-schema.description="docker-nginx is the base nginx image at UNB Libraries." \
+  org.label-schema.name="nginx" \
+  org.label-schema.schema-version="1.0" \
+  org.label-schema.url="https://github.com/unb-libraries/docker-nginx" \
+  org.label-schema.vcs-ref="1.x" \
+  org.label-schema.vcs-url="https://github.com/unb-libraries/docker-nginx" \
+  org.label-schema.vendor="University of New Brunswick Libraries" \
+  org.label-schema.version=$VERSION \
+  org.opencontainers.image.source="https://github.com/unb-libraries/docker-nginx"
 
 ENV APP_HOSTNAME nginx.local
 ENV APP_ROOT /app
