@@ -2,5 +2,6 @@
 START_TIME=`cat /tmp/start_time`
 NOW=`date +%s`
 STARTUP_TIME=`expr $NOW - $START_TIME`
-
-echo "Container startup time : ${STARTUP_TIME}s"
+echo "-------------------" >> /tmp/deploy_time.txt
+echo "Total : ${STARTUP_TIME}s" >> /tmp/deploy_time.txt
+cat /tmp/deploy_time.txt
