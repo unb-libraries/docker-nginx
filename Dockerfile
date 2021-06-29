@@ -17,7 +17,7 @@ ENV NGINX_RUN_USER nginx
 COPY ./conf /conf
 COPY ./scripts /scripts
 
-RUN apk --no-cache add nginx patch && \
+RUN apk --no-cache add util-linux nginx patch && \
   mkdir -p ${NGINX_PID_DIR} && \
   chown ${NGINX_RUN_GROUP}:${NGINX_RUN_USER} ${NGINX_PID_DIR} && \
   mkdir -p ${APP_WEBROOT} && \
