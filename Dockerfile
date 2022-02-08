@@ -7,7 +7,8 @@ ENV APP_LOG_DIR $APP_ROOT/log
 ENV APP_WEBROOT $APP_ROOT/html
 ENV COLUMNS 160
 ENV DEPLOY_ENV prod
-ENV NGINX_APP_CONF_FILE /etc/nginx/http.d/app.conf
+ENV NGINX_CONFD_DIR /etc/nginx/http.d
+ENV NGINX_APP_CONF_FILE $NGINX_CONFD_DIR/app.conf
 ENV NGINX_CONF_FILE /etc/nginx/nginx.conf
 ENV NGINX_ERROR_LOG_FILE /proc/self/fd/2
 ENV NGINX_LOG_FILE /proc/self/fd/2
@@ -24,7 +25,7 @@ RUN apk --no-cache add util-linux nginx patch && \
   chown ${NGINX_RUN_GROUP}:${NGINX_RUN_USER} ${NGINX_PID_DIR} && \
   mkdir -p ${APP_WEBROOT} && \
   mkdir -p ${APP_LOG_DIR} && \
-  rm -rf /etc/nginx/http.d/default.conf && \
+  rm -rf ${NGINX_CONFD_DIR}/default.conf && \
   cp /conf/nginx/nginx.conf ${NGINX_CONF_FILE} && \
   cp /conf/nginx/app.conf ${NGINX_APP_CONF_FILE} && \
   chmod -R 755 /scripts
