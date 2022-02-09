@@ -1,4 +1,4 @@
-# unb-libraries/docker-nginx  [![](https://github.com/unb-libraries/docker-nginx/workflows/build-test-deploy/badge.svg?branch=1.x)](https://github.com/unb-libraries/docker-nginx/actions?query=workflow%3Abuild-test-deploy) [![GitHub license](https://img.shields.io/github/license/unb-libraries/docker-nginx)](https://github.com/unb-libraries/lib.unb.ca/blob/prod/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/docker-nginx?label=lean%20repo%20size)
+# unb-libraries/docker-nginx  [![](https://github.com/unb-libraries/docker-nginx/workflows/build-test-deploy/badge.svg?branch=2.x)](https://github.com/unb-libraries/docker-nginx/actions?query=workflow%3Abuild-test-deploy) [![GitHub license](https://img.shields.io/github/license/unb-libraries/docker-nginx)](https://github.com/unb-libraries/lib.unb.ca/blob/prod/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/docker-nginx?label=lean%20repo%20size)
 A lightweight extensible nginx docker image, suitable for development or production deployments.
 
 ## Usage
@@ -8,7 +8,7 @@ docker run \
        --name nginx \
        -v /local/dir:/app/html \
        -p 80:80 \
-       ghcr.io/unb-libraries/nginx:1.x
+       ghcr.io/unb-libraries/nginx:2.x
 ```
 
 ## Author / Contributors
