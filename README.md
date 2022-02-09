@@ -1,6 +1,14 @@
 # unb-libraries/docker-nginx  [![](https://github.com/unb-libraries/docker-nginx/workflows/build-test-deploy/badge.svg?branch=2.x)](https://github.com/unb-libraries/docker-nginx/actions?query=workflow%3Abuild-test-deploy) [![GitHub license](https://img.shields.io/github/license/unb-libraries/docker-nginx)](https://github.com/unb-libraries/lib.unb.ca/blob/prod/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/docker-nginx?label=lean%20repo%20size)
 A lightweight extensible nginx docker image, suitable for development or production deployments.
 
+## Branches/Tags
+The currently maintained image/tag is **ghcr.io/unb-libraries/nginx:2.x**. The 1.x tag exists for legacy purposes only.
+
+|               Tag               | Nginx | Alpine |
+|:-------------------------------:|-------|--------|
+| ghcr.io/unb-libraries/nginx:2.x | 1.20  | 1.15   |
+| ghcr.io/unb-libraries/nginx:1.x | 1.18  | 1.13   |
+
 ## Usage
 ```
 docker run \
