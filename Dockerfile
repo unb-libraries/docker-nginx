@@ -22,7 +22,7 @@ COPY ./scripts /scripts
 
 RUN apk --no-cache add util-linux nginx patch && \
   mkdir -p "$NGINX_PID_DIR" && \
-  chown $NGINX_RUN_GROUP:$NGINX_RUN_USER "$NGINX_PID_DIR" && \
+  chown "$NGINX_RUN_GROUP":"$NGINX_RUN_USER" "$NGINX_PID_DIR" && \
   mkdir -p "$APP_WEBROOT" && \
   mkdir -p "$APP_LOG_DIR" && \
   rm -rf "$NGINX_CONFD_DIR/default.conf" && \
