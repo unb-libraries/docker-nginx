@@ -21,9 +21,9 @@ RUN apk --no-cache add nginx && \
   chown "$NGINX_RUN_GROUP":"$NGINX_RUN_USER" "$NGINX_PID_DIR" && \
   mkdir -p "$APP_WEBROOT" && \
   rm -rf "$NGINX_CONFD_DIR/default.conf" && \
-  cp /build/conf/nginx/nginx.conf "$NGINX_CONF_FILE" && \
-  cp /build/conf/nginx/app.conf "$NGINX_APP_CONF_FILE" && \
-  cp -r /build/scripts/* /scripts/ && \
+  $RSYNC_COPY /build/conf/nginx/nginx.conf "$NGINX_CONF_FILE" && \
+  $RSYNC_COPY /build/conf/nginx/app.conf "$NGINX_APP_CONF_FILE" && \
+  $RSYNC_COPY /build/scripts/ /scripts/ && \
   chmod -R 755 /scripts
 
 WORKDIR /app
