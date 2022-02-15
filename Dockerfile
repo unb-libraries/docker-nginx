@@ -1,12 +1,9 @@
-FROM alpine:3.15
+FROM ghcr.io/unb-libraries/base:2.x
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
+ENV APP_STARTUP_CMD nginx
 ENV APP_HOSTNAME nginx.local
-ENV APP_ROOT /app
-ENV APP_LOG_DIR $APP_ROOT/log
 ENV APP_WEBROOT $APP_ROOT/html
-ENV COLUMNS 160
-ENV DEPLOY_ENV prod
 ENV NGINX_CONFD_DIR /etc/nginx/http.d
 ENV NGINX_APP_CONF_FILE $NGINX_CONFD_DIR/app.conf
 ENV NGINX_CONF_FILE /etc/nginx/nginx.conf
@@ -17,17 +14,16 @@ ENV NGINX_PID_FILE $NGINX_PID_DIR/nginx.pid
 ENV NGINX_RUN_GROUP nginx
 ENV NGINX_RUN_USER nginx
 
-COPY ./conf /conf
-COPY ./scripts /scripts
+COPY ./build /build
 
-RUN apk --no-cache add util-linux nginx patch && \
+RUN apk --no-cache add nginx && \
   mkdir -p "$NGINX_PID_DIR" && \
   chown "$NGINX_RUN_GROUP":"$NGINX_RUN_USER" "$NGINX_PID_DIR" && \
   mkdir -p "$APP_WEBROOT" && \
-  mkdir -p "$APP_LOG_DIR" && \
   rm -rf "$NGINX_CONFD_DIR/default.conf" && \
-  cp /conf/nginx/nginx.conf "$NGINX_CONF_FILE" && \
-  cp /conf/nginx/app.conf "$NGINX_APP_CONF_FILE" && \
+  cp /build/conf/nginx/nginx.conf "$NGINX_CONF_FILE" && \
+  cp /build/conf/nginx/app.conf "$NGINX_APP_CONF_FILE" && \
+  cp -r /build/scripts/* /scripts/ && \
   chmod -R 755 /scripts
 
 WORKDIR /app
