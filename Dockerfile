@@ -4,7 +4,8 @@ MAINTAINER UNB Libraries <libsupport@unb.ca>
 ENV APP_STARTUP_CMD nginx
 ENV APP_HOSTNAME nginx.local
 ENV APP_WEBROOT $APP_ROOT/html
-ENV NGINX_CONFD_DIR /etc/nginx/http.d
+ENV NGINX_CONFD_SLUG http.d
+ENV NGINX_CONFD_DIR /etc/nginx/$NGINX_CONFD_SLUG
 ENV NGINX_APP_CONF_FILE $NGINX_CONFD_DIR/app.conf
 ENV NGINX_CONF_FILE /etc/nginx/nginx.conf
 ENV NGINX_ERROR_LOG_FILE /proc/self/fd/2
