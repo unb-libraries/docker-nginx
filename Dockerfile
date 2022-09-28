@@ -1,4 +1,4 @@
-FROM ghcr.io/unb-libraries/base:2.x
+FROM ghcr.io/unb-libraries/base:3.x
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
 ENV APP_STARTUP_CMD nginx
