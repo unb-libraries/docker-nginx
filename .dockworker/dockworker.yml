@@ -10,9 +10,9 @@ dockworker:
       uuid: 6001
     topics:
       - nginx
-  image:
-    name: ghcr.io/unb-libraries/nginx
   workflows:
+    image:
+      name: ghcr.io/unb-libraries/nginx
     vcs:
       type: github
       owner: unb-libraries
