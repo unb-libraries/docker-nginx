@@ -1,0 +1,19 @@
+dockworker:
+  version: '6'
+  application:
+    description: A lightweight extensible nginx docker image, suitable for development or production deployments.
+    uri: https://github.com/unb-libraries/docker-nginx
+    identifiers:
+      id: docker-nginx
+      slug: docker-nginx
+      short_slug: basenginx
+      uuid: 6001
+    topics:
+      - nginx
+  image:
+    name: ghcr.io/unb-libraries/nginx
+  workflows:
+    vcs:
+      type: github
+      owner: unb-libraries
+      name: docker-nginx
