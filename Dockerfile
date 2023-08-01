@@ -24,6 +24,8 @@ RUN apk --no-cache add nginx && \
   rm -rf "$NGINX_CONFD_DIR/default.conf" && \
   $RSYNC_COPY /build/conf/nginx/nginx.conf "$NGINX_CONF_FILE" && \
   $RSYNC_COPY /build/conf/nginx/app.conf "$NGINX_APP_CONF_FILE" && \
+  $RSYNC_COPY /build/conf/nginx/daemon "$NGINX_CONFD_DIR/" && \
+  $RSYNC_COPY /build/conf/nginx/server "$NGINX_CONFD_DIR/" && \
   $RSYNC_COPY /build/scripts/ /scripts/ && \
   chmod -R 755 /scripts
 
