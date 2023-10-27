@@ -5,10 +5,11 @@ A lightweight extensible nginx docker image, suitable for development or product
 This image offers relatively no useful functionality on its own, but serves well as the base of other images. For an example how we extend this image, please see [unb-libraries/docker-nginx-php](https://github.com/unb-libraries/docker-nginx-php).
 
 ## Branches/Tags
-The only currently maintained tag is **ghcr.io/unb-libraries/nginx:2.x**. The 1.x tag exists for legacy purposes only.
+The only currently maintained tag is **ghcr.io/unb-libraries/nginx:3.x**. The 2.x and 1.x tags exist for legacy purposes only.
 
 |               Tag               | Nginx | Alpine |
 |:-------------------------------:|-------|--------|
+| ghcr.io/unb-libraries/nginx:3.x | 1.22  | 3.17   |
 | ghcr.io/unb-libraries/nginx:2.x | 1.20  | 1.15   |
 | ghcr.io/unb-libraries/nginx:1.x | 1.18  | 1.13   |
 
