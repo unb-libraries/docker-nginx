@@ -10,7 +10,7 @@
   "name": "unb-libraries/docker-nginx",
   "prefer-stable": true,
   "require-dev": {
-    "unb-libraries/dockworker-baseimage": "6.x-dev"
+    "unb-libraries/dockworker-baseimage": "^6"
   },
   "scripts": {
     "post-update-cmd": [
