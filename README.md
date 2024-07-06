@@ -1,17 +1,18 @@
-# unb-libraries/docker-nginx  [![](https://github.com/unb-libraries/docker-nginx/workflows/build-test-deploy/badge.svg?branch=2.x)](https://github.com/unb-libraries/docker-nginx/actions?query=workflow%3Abuild-test-deploy) [![GitHub license](https://img.shields.io/github/license/unb-libraries/docker-nginx)](https://github.com/unb-libraries/lib.unb.ca/blob/prod/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/docker-nginx?label=lean%20repo%20size)
+# unb-libraries/docker-nginx  [![](https://github.com/unb-libraries/docker-nginx/workflows/build-test-deploy/badge.svg?branch=3.18.x)](https://github.com/unb-libraries/docker-nginx/actions?query=workflow%3Abuild-test-deploy) [![GitHub license](https://img.shields.io/github/license/unb-libraries/docker-nginx)](https://github.com/unb-libraries/lib.unb.ca/blob/prod/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/docker-nginx?label=lean%20repo%20size)
 A lightweight extensible nginx docker image, suitable for development or production deployments.
 
 ## Usage
 This image offers relatively no useful functionality on its own, but serves well as the base of other images. For an example how we extend this image, please see [unb-libraries/docker-nginx-php](https://github.com/unb-libraries/docker-nginx-php).
 
 ## Branches/Tags
-The only currently maintained tag is **ghcr.io/unb-libraries/nginx:3.x**. The 2.x and 1.x tags exist for legacy purposes only.
+The only currently maintained branches are:
 
-|               Tag               | Nginx | Alpine |
-|:-------------------------------:|-------|--------|
-| ghcr.io/unb-libraries/nginx:3.x | 1.22  | 3.17   |
-| ghcr.io/unb-libraries/nginx:2.x | 1.20  | 1.15   |
-| ghcr.io/unb-libraries/nginx:1.x | 1.18  | 1.13   |
+|               Tag                  | Nginx | Alpine |
+|:----------------------------------:|-------|--------|
+| ghcr.io/unb-libraries/nginx:3.17.x | 1.22  | 3.17   |
+| ghcr.io/unb-libraries/nginx:3.18.x | 1.24  | 3.18   |
+
+Other branches may exist for legacy purposes, but should not be used.
 
 ## Author / Contributors
 This application was created at [![UNB Libraries](https://github.com/unb-libraries/assets/raw/master/unblibbadge.png "UNB Libraries")](https://lib.unb.ca) by the following humans:
