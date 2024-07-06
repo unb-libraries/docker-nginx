@@ -1,4 +1,4 @@
-FROM ghcr.io/unb-libraries/base:3.17.x
+FROM ghcr.io/unb-libraries/base:3.18.x
 
 ENV APP_STARTUP_CMD=nginx
 ENV APP_HOSTNAME=nginx.local
