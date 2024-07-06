@@ -1,5 +1,4 @@
 FROM ghcr.io/unb-libraries/base:3.17.x
-MAINTAINER UNB Libraries <libsupport@unb.ca>
 
 ENV APP_STARTUP_CMD=nginx
 ENV APP_HOSTNAME=nginx.local
@@ -47,4 +46,5 @@ LABEL ca.unb.lib.generator="nginx" \
   org.label-schema.vcs-url="https://github.com/unb-libraries/docker-nginx" \
   org.label-schema.vendor="University of New Brunswick Libraries" \
   org.label-schema.version=$VERSION \
+  org.opencontainers.image.authors="libsystems@unb.ca" \
   org.opencontainers.image.source="https://github.com/unb-libraries/docker-nginx"
