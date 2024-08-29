@@ -46,5 +46,5 @@ LABEL ca.unb.lib.generator="nginx" \
   org.label-schema.vcs-url="https://github.com/unb-libraries/docker-nginx" \
   org.label-schema.vendor="University of New Brunswick Libraries" \
   org.label-schema.version=$VERSION \
-  org.opencontainers.image.authors="libsystems@unb.ca" \
+  org.opencontainers.image.authors="UNB Libraries <libsupport@unb.ca>" \
   org.opencontainers.image.source="https://github.com/unb-libraries/docker-nginx"
