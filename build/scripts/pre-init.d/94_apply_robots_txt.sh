@@ -1,5 +1,13 @@
 #!/usr/bin/env sh
 set -eu
+
+# Per RFC 9309 (Robots Exclusion Protocol), multiple blocks for the same
+# User-agent are combined into a single effective rule set rather than
+# overriding previous entries. User-agent: * rules are not inherited by more
+# specific user agents; each matching user agent group stands on its own and
+# path matching follows longest-match rules.
+# @SEE https://www.rfc-editor.org/rfc/rfc9309.html
+
 ROBOTS_FILE="$APP_WEBROOT/robots.txt"
 
 if [ ! -d "$APP_WEBROOT" ]; then
