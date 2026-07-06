@@ -36,6 +36,8 @@ EXPOSE 80
 
 ENTRYPOINT ["/scripts/run.sh"]
 
+ARG BUILD_DATE
+ARG VERSION
 LABEL ca.unb.lib.generator="nginx" \
   com.microscaling.docker.dockerfile="/Dockerfile" \
   com.microscaling.license="MIT" \
